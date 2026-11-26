@@ -6,9 +6,9 @@ def input_temperature(temp_str: str) -> int:
 def test_temperature(strtotest: str) -> None:
     try:
         print(f"Temperature is now {input_temperature(strtotest)}°C\n")
-    except ValueError:
-        print("Caught input_temperature error: invalid"
-              f" literal for int() with base 10: '{strtotest}'\n")
+    except ValueError as err:
+        print("Caught input_temperature error: "
+              f"{err}\n")
 
 
 if __name__ == "__main__":
@@ -18,3 +18,4 @@ if __name__ == "__main__":
     print("Input data is 'abc'")
     test_temperature("abc")
     print("All tests completed - program didn't crash!")
+
